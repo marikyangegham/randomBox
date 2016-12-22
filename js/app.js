@@ -2,7 +2,7 @@ let app = angular.module('randomBox', []);
 app.controller('getRandomUsersController', ['$http', '$scope', function ($http, $scope) {
     $scope.usersParams = [];
     let getUsers = function () {
-        let randomValue = Math.floor(Math.random() * 500);
+        let randomValue = Math.floor(Math.random() * 1000);
         $http({method: 'GET', url: 'https://api.github.com/users?since=' + randomValue})
             .then(function (data) {
                  addUsers(data.data);
